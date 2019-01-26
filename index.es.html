@@ -22,8 +22,16 @@
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
+		<script>
+			userLang= (navigator.language || navigator.userLanguage || "en").replace(/-.*/,'');
+			quiereEs= userLang=="es" || window.location.href.match(/\?es/);
+    	if (quiereEs && !window.location.pathname.match(/\.es\./)) { //A: quiere es	pero no esta
+				page= window.location.pathname; if (page.match(/\/$/)) { page+="index.html" }
+				page_es= page.replace(/\.html$/,'.es.html');
+				window.location.href= page_es;
+			}
+		</script>
 		<!-- PLANTILLA_INI -->
-    <link rel="stylesheet" href="style.less" class="cid-rfTy5wOC2M" id="menu1-1" data-rv-view="89">
     <section class="menu cid-rfTy5wOC2M" once="menu" id="menu1-1">
 
         <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
